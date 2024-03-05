@@ -1,0 +1,20 @@
+h2 {
+    color: blue;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+    padding: 1em;
+    border: 1px solid black;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+td:nth-last-child(-n+1) {
+    border-right: 0px solid black;
+}
