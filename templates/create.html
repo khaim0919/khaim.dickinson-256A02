@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Account {% endblock %}
+
+{% block content %}
+    <form method="post" action="/create">
+		<fieldset>
+            <legend>Create Account</legend>
+            
+            <div>        
+                {{ form.email.label }}: {{ form.email }}<br><br>
+
+                {% for subfield in form.role %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}<br><br>
+
+				{{ form.password.label }}: {{ form.password }}<br><br>
+
+                {{ form.password_confirm.label }}: {{ form.password_confirm }}<br><br>
+
+                {{ form.submit }}
+            </div>
+        </fieldset>
+	</form>
+{% endblock %}

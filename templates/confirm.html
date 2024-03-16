@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete Pizza {% endblock %}
+
+{% block content %}
+    <p>Are you sure you want to delete the following pizza order?</p>
+    <p>Type: {{ data.type }}</p>
+    <p>Crust: {{ data.crust }}</p>
+    <p>Size: {{ data.size }}</p>
+    <p>Quantity: {{ data.quantity }}</p>
+    <p>Price Per Pizza: {{ data.price_per }}</p>
+    <p>Order Date: {{ data.order_date }}</p>
+
+    <a class="reject button" href="/">No</a>
+    <form class="accept button" method="post" action="/pizza">
+        <input type="hidden" id="id" name="id" value="{{ data.id }}">
+        <input type="submit" value="Yes">
+    </form>
+{% endblock %}

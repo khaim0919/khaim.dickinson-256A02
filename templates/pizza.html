@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Pizza {% endblock %}
+
+{% block content %}
+    <form class="form" method="post" action="/pizza">
+        <fieldset>
+            <legend class="legend">Create Pizza</legend>
+            
+            <div>
+                {{ form.type.label }}: {{ form.type }}<br><br>
+
+                {{ form.crust.label }}: {{ form.crust }}<br><br>
+
+                {{ form.size.label }}: {{ form.size }}<br><br>
+
+                {{ form.quantity.label }}: {{ form.quantity }}<br><br>
+
+                {{ form.price_per_pizza.label }}: {{ form.price_per_pizza }}<br><br>
+
+                {{ form.date.label }}: {{ form.date }}<br><br>
+
+                <input type="hidden" id="id" name="id" value="null">
+
+                {{ form.submit }}
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        const urlParameters = new URLSearchParams(window.location.search);
+
+        if (urlParameters.size != 0)
+        {
+            pizzaData = JSON.parse((urlParameters.get('edit')).replaceAll('+', ' ').replaceAll("'", '"'));
+            console.log(pizzaData);
+
+            let legend = document.querySelector('.legend');
+            legend.innerText = "Edit Pizza"
+
+            let type = document.querySelector('#type');
+            type.value = pizzaData.type;
+            
+            let crust = document.querySelector('#crust');
+            crust.value = pizzaData.crust;
+            
+            let size = document.querySelector('#size');
+            size.value = pizzaData.size;
+            
+            let quantity = document.querySelector('#quantity');
+            quantity.value = pizzaData.quantity;
+            
+            let price_per = document.querySelector('#price_per_pizza');
+            price_per.value = pizzaData.price_per;
+            
+            let date = document.querySelector('#date');
+            date.value = pizzaData.order_date.replaceAll('/', '-');
+
+            let id = document.querySelector('#id');
+            id.value = pizzaData.id;
+
+            let submit = document.querySelector('#submit')
+            submit.value = "Edit"
+        }
+
+    </script>
+{% endblock %}

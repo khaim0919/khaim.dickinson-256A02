@@ -1,0 +1,22 @@
+[
+  {
+    "email": "admin@admin.admin",
+    "password": "admin",
+    "role": "s"
+  },
+  {
+    "email": "amcdonald@yahoo.com",
+    "password": "super",
+    "role": "c"
+  },
+  {
+    "email": "khaim0919@outlook.com",
+    "password": "aaa",
+    "role": "c"
+  },
+  {
+    "email": "j.airwould@outlook.com",
+    "password": "nice",
+    "role": "c"
+  }
+]

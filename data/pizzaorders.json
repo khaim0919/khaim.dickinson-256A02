@@ -1,0 +1,65 @@
+[
+  {
+    "id": 0,
+    "type": "Canadian",
+    "crust": "cauliflower",
+    "size": "individual",
+    "quantity": 2,
+    "price_per": 5.85,
+    "order_date": "2024/03/14"
+  },
+  {
+    "id": 1,
+    "type": "Hawaiian",
+    "crust": "regular",
+    "size": "large",
+    "quantity": 1,
+    "price_per": 7.2,
+    "order_date": "2024/02/07"
+  },
+  {
+    "id": 2,
+    "type": "Canadian",
+    "crust": "deep dish",
+    "size": "small",
+    "quantity": 3,
+    "price_per": 2.15,
+    "order_date": "2023/12/18"
+  },
+  {
+    "id": 4,
+    "type": "Vegetarian",
+    "crust": "regular",
+    "size": "medium",
+    "quantity": 5,
+    "price_per": 2.6,
+    "order_date": "2024/03/06"
+  },
+  {
+    "id": 5,
+    "type": "Cheese",
+    "crust": "thin crust",
+    "size": "small",
+    "quantity": 3,
+    "price_per": 7.0,
+    "order_date": "2024/03/20"
+  },
+  {
+    "id": 6,
+    "type": "Vegetarian",
+    "crust": "deep dish",
+    "size": "large",
+    "quantity": 3,
+    "price_per": 2.5,
+    "order_date": "2024/03/11"
+  },
+  {
+    "id": 7,
+    "type": "Meat Lovers",
+    "crust": "regular",
+    "size": "large",
+    "quantity": 3,
+    "price_per": 8.92,
+    "order_date": "2024/02/27"
+  }
+]

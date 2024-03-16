@@ -3,6 +3,50 @@
 {% block title %} Menu {% endblock %}
 
 {% block content %}
-	<h1>Logged in as {{ email }}</h1>
-	<h2>The Official Pizza Power Store</h2>
+	<p>Logged in as {{ data.user.email }}</p>
+	<a class="logout button" href="/logout">Logout</a>
+	<h1>The Official Pizza Power Store</h1>
+
+	<a class="order button" href="/pizza">Order New Pizza</a>
+
+	<div>
+		<table>
+			<tr>
+				<th>Type</th>
+				<th>Crust</th>
+				<th>Size</th>
+				<th>Quantity</th>
+				<th>Price Per</th>
+				<th>Sub Total</th>
+				<th>Total</th>
+				<th>Order Date</th>
+				<th></th>
+				<th></th>
+			</tr>
+			{% for pizza in data.orders %}
+			<tr id="{{ pizza.id }}">
+				<td>{{ pizza.type }}</td>
+				<td>{{ pizza.crust }}</td>
+				<td>{{ pizza.size }}</td>
+				<td>{{ pizza.quantity }}</td>
+				<td>${{ pizza.price_per }}</td>
+				<td>${{ (pizza.price_per * pizza.quantity) | round(2) }}</td>
+				<td>${{ ((pizza.price_per * pizza.quantity) + (pizza.price_per * pizza.quantity * 0.10)) | round(2) }}</td>
+				<td>{{ pizza.order_date }}</td>
+				<td>
+					<form class="edit button" action="/pizza" method="get">
+						<input type="hidden" name="edit" value="{{ pizza }}">
+						<input type="submit" value="Edit">
+					</form>
+				</td>
+				<td>
+					<form class="delete button" action="/confirm" method="post">
+						<input type="hidden" name="data" value="{{ pizza }}">
+						<input type="submit" value="Delete">
+					</form>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
 {% endblock %}
